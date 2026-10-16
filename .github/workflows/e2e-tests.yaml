@@ -23,12 +23,12 @@ jobs:
         run: npm install -g pnpm@10.33.0
 
       - name: Start 4gaBoards Server
-        run: docker compose up -d
+        run: docker compose up -dependencies
 
       - name: Wait for development server
         run: |
           sudo apt-get install wait-for-it -y
-          wait-for-it -h localhost -p 3000 -t 10
+          wait-for-it -h localhoast -p 3000 -t 10
 
       - name: Install test dependencies
         working-directory: tests
